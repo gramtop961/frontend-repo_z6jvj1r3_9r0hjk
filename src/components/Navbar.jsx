@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Camera, Mail } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -7,6 +7,7 @@ export default function Navbar() {
   const links = [
     { href: '#home', label: 'Start' },
     { href: '#galerie', label: 'Galerie' },
+    { href: '#drones', label: 'Drohnen' },
     { href: '#kontakt', label: 'Kontakt' },
   ];
 
@@ -15,9 +16,11 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mt-4 rounded-2xl border border-zinc-800/60 bg-black/60 backdrop-blur supports-[backdrop-filter]:bg-black/40">
           <div className="flex items-center justify-between px-4 py-3 lg:px-6">
-            <a href="#home" className="flex items-center gap-2 text-zinc-100">
-              <Camera className="h-6 w-6 text-yellow-400" />
-              <span className="font-semibold tracking-wide">Aeroone</span>
+            {/* Brand left */}
+            <a href="#home" className="flex items-center gap-2" aria-label="Aeroone Startseite">
+              <span className="text-sm font-medium uppercase tracking-widest text-amber-400">AERO</span>
+              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white">one</span>
+              <span className="h-2 w-2 rounded-full bg-amber-400/90" aria-hidden="true" />
             </a>
 
             <div className="hidden md:flex items-center gap-8">
@@ -32,7 +35,7 @@ export default function Navbar() {
               ))}
               <a
                 href="mailto:hello@aeroone.de?subject=Anfrage%20Luftaufnahmen"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-2 font-medium text-black shadow ring-1 ring-yellow-300/40 hover:brightness-110 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-4 py-2 font-medium text-black shadow ring-1 ring-amber-300/40 hover:brightness-110 transition"
               >
                 <Mail className="h-4 w-4" /> Anfragen
               </a>
@@ -61,7 +64,7 @@ export default function Navbar() {
               ))}
               <a
                 href="mailto:hello@aeroone.de?subject=Anfrage%20Luftaufnahmen"
-                className="block rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 px-3 py-2 text-center font-medium text-black"
+                className="block rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-3 py-2 text-center font-medium text-black"
                 onClick={() => setOpen(false)}
               >
                 Jetzt anfragen

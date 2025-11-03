@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { BadgeCheck } from 'lucide-react';
 import { useRef } from 'react';
+import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
   const ref = useRef(null);
@@ -10,12 +11,21 @@ export default function Hero() {
 
   return (
     <section id="home" ref={ref} className="relative min-h-[92vh] overflow-hidden bg-black">
-      {/* Background gradient */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,200,0,0.15),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(255,120,0,0.12),transparent_60%)]" />
+      {/* Spline full-width cover */}
+      <div className="absolute inset-0">
+        <Spline
+          scene="https://prod.spline.design/g5OaHmrKTDxRI7Ig/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
+
+      {/* Gradient overlays (non-blocking) */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,200,0,0.12),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(255,120,0,0.10),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
 
       <motion.div style={{ y, opacity }} className="relative z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40 pb-24">
-          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-yellow-200">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-amber-200">
             <BadgeCheck className="h-4 w-4" />
             <span className="text-sm">Premium Luftaufnahmen – Gütersloh & NRW</span>
           </div>
@@ -35,7 +45,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#galerie"
-              className="rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-3 font-semibold text-black shadow ring-1 ring-yellow-300/40 hover:brightness-110"
+              className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-5 py-3 font-semibold text-black shadow ring-1 ring-amber-300/40 hover:brightness-110"
             >
               Galerie ansehen
             </a>
@@ -47,12 +57,9 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="mt-8 text-sm text-zinc-400">Gütersloh • Region • NRW</p>
+          <p className="mt-8 text-sm text-zinc-300">Gütersloh • Region • NRW</p>
         </div>
       </motion.div>
-
-      {/* Subtle bottom fade */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
     </section>
   );
 }
