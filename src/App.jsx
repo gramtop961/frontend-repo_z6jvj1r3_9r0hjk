@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import QualityGallery from './components/QualityGallery.jsx';
-import Contact from './components/Contact.jsx';
+import Drones from './components/Drones.jsx';
 
 export default function App() {
   return (
@@ -10,9 +10,9 @@ export default function App() {
       <main>
         <Hero />
         <QualityGallery />
-        <Contact />
+        <Drones />
       </main>
-      <footer className="border-t border-zinc-800/60 bg-black/80 py-10">
+      <footer id="kontakt" className="border-t border-zinc-800/60 bg-black/80 py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-zinc-400">© {new Date().getFullYear()} Aeroone – Luftbildproduktion aus Gütersloh</p>
           <div className="text-sm text-zinc-500">Impressum • Datenschutz</div>
