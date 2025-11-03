@@ -13,6 +13,7 @@ const Navbar = () => {
           </a>
           <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             <a href="#showcase" className="transition hover:text-white">Showcase</a>
+            <a href="#gear" className="transition hover:text-white">Ausrüstung</a>
             <a href="#reviews" className="transition hover:text-white">Bewertungen</a>
             <a href="#kontakt" className="transition hover:text-white">Kontakt</a>
             <a
