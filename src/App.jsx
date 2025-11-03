@@ -1,20 +1,14 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import VideoShowcase from './components/VideoShowcase';
-import Gear from './components/Gear';
-import Reviews from './components/Reviews';
-import Contact from './components/Contact';
+import FlowSections from './components/FlowSections';
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-white antialiased">
       <Navbar />
       <Hero />
-      <VideoShowcase />
-      <Gear />
-      <Reviews />
-      <Contact />
+      <FlowSections />
       <footer className="border-t border-white/10 py-6 text-center text-sm text-gray-400">
         © {new Date().getFullYear()} Aeroone – Professionelle Drohnenaufnahmen in Deutschland
       </footer>
