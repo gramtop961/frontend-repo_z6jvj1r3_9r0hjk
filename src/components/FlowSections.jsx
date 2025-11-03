@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Film, Gauge, ShieldCheck, Star } from 'lucide-react';
+import { Camera, Film, Gauge, ShieldCheck, Star, Rocket } from 'lucide-react';
 
 // Small info chip used to scatter compact facts across the page
 const InfoChip = ({ icon: Icon, title, text }) => (
@@ -16,20 +16,20 @@ const InfoChip = ({ icon: Icon, title, text }) => (
 
 const videos = [
   {
-    src: 'https://cdn.coverr.co/videos/coverr-dramatic-aerial-footage-of-rocky-sea-1555/1080p.mp4',
-    title: 'Küste bei Sonnenuntergang',
-  },
-  {
-    src: 'https://cdn.coverr.co/videos/coverr-aerial-view-of-waves-1945/1080p.mp4',
-    title: 'Brandung – Detailaufnahme',
-  },
-  {
     src: 'https://cdn.coverr.co/videos/coverr-aerial-of-road-in-the-desert-1447/1080p.mp4',
     title: 'Roadtrip im Morgenlicht',
   },
   {
     src: 'https://cdn.coverr.co/videos/coverr-amazing-aerial-view-of-iceland-8752/1080p.mp4',
     title: 'Weite Landschaft',
+  },
+  {
+    src: 'https://cdn.coverr.co/videos/coverr-dramatic-aerial-footage-of-rocky-sea-1555/1080p.mp4',
+    title: 'Felsige Küste',
+  },
+  {
+    src: 'https://cdn.coverr.co/videos/coverr-aerial-view-of-waves-1945/1080p.mp4',
+    title: 'Brandung – Detailaufnahme',
   },
 ];
 
@@ -99,7 +99,7 @@ const FlowSections = () => {
           <InfoChip
             icon={Film}
             title="Drohnen"
-            text="DJI Mavic 3, Nazgul F4/F6 (FPV), GoFilm 20 – für Innenräume und dynamische Verfolgungen."
+            text="DJI Mavic 3, Nazgul F4 & F6 (FPV), GoFilm 20 – für Innenräume und dynamische Verfolgungen."
           />
           <InfoChip
             icon={Gauge}
@@ -109,7 +109,7 @@ const FlowSections = () => {
         </div>
       </section>
 
-      {/* Stacked feature band to lengthen the page */}
+      {/* Feature band */}
       <section className="border-y border-white/10 bg-neutral-950/60 py-14">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 md:grid-cols-4">
           <InfoChip
@@ -125,7 +125,7 @@ const FlowSections = () => {
           <InfoChip
             icon={Film}
             title="Einsatzbereit"
-            text="Operativ deutschlandweit – innerhalb von 72 Stunden."
+            text="Operativ deutschlandweit – Standort Gütersloh."
           />
           <InfoChip
             icon={Gauge}
@@ -135,7 +135,64 @@ const FlowSections = () => {
         </div>
       </section>
 
-      {/* Compact gear details split into scattered mini blocks to keep information concise */}
+      {/* Dedicated sections for Nazgul F4 and F6 */}
+      <section id="nazgul-f4" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-white md:text-3xl">
+            Nazgul F4
+            <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              FPV Präzision
+            </span>
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
+            Leichter, agiler FPV-Quad für enge Linien, schnelle Richtungswechsel und präzise Indoor‑/Outdoor‑Shots.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <InfoChip icon={Rocket} title="Einsatzgebiet" text="Close Proximity, Innenräume, dynamische Verfolgungen." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Gauge} title="Geschwindigkeit" text="Sehr agil – ideal für schnelle Bewegungen mit hoher Kontrolle." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Camera} title="Kamera" text="GoPro/Actioncams mit flachen Profilen (10‑bit, hohe Bitraten)." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={ShieldCheck} title="Sicherheit" text="Prop‑Guards optional, präzise Flugrouten, redundante Funkstrecken." />
+          </div>
+        </div>
+      </section>
+
+      <section id="nazgul-f6" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-white md:text-3xl">
+            Nazgul F6
+            <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              High‑Speed FPV
+            </span>
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
+            Kraftvoller 6‑Zoll FPV‑Build für Outdoor, Speed‑Runs und weite, cineastische Linien mit hoher Effizienz.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <InfoChip icon={Rocket} title="Einsatzgebiet" text="Sport, Automotive, weite Außenareale, dynamische Chases." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Gauge} title="Reichweite" text="Effizienter Antrieb – lange, stabile Lines bei Wind." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Camera} title="Kamera" text="GoPro/Actioncams mit stabilen 4K/5.3K‑Profilen (24–60 FPS)." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={ShieldCheck} title="Compliance" text="EU‑weit versichert, Luftraumprüfung und Spotter‑Konzept inklusive." />
+          </div>
+        </div>
+      </section>
+
+      {/* Compact gear overview (kept concise) */}
       <section id="gear" className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-white md:text-3xl">
@@ -145,7 +202,7 @@ const FlowSections = () => {
             </span>
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
-            Kompakt erklärt – in kleine, gut verdauliche Abschnitte aufgeteilt.
+            Kompakt erklärt – perfekt für Social, Web und TV.
           </p>
         </div>
 
@@ -158,14 +215,6 @@ const FlowSections = () => {
             />
           </div>
           <div className="md:col-span-7">
-            <InfoChip
-              icon={Film}
-              title="Nazgul F4/F6 (FPV)"
-              text="Dynamische Verfolgungen mit hoher Präzision – perfekt für Sport & Automotive."
-            />
-          </div>
-
-          <div className="md:col-span-4">
             <InfoChip
               icon={Film}
               title="GoFilm 20"
@@ -184,6 +233,13 @@ const FlowSections = () => {
               icon={ShieldCheck}
               title="Sicherheit"
               text="EU‑weit versichert, Luftraumprüfung (A1/A3), SORA bei Bedarf."
+            />
+          </div>
+          <div className="md:col-span-4">
+            <InfoChip
+              icon={Rocket}
+              title="Standort"
+              text="Wir operieren aus Gütersloh und sind deutschlandweit im Einsatz."
             />
           </div>
         </div>
@@ -228,7 +284,7 @@ const FlowSections = () => {
         </div>
       </section>
 
-      {/* Secondary scattered info row to elongate page and re-emphasize benefits */}
+      {/* Secondary scattered info row */}
       <section className="py-12">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 md:grid-cols-3">
           <InfoChip
@@ -256,7 +312,7 @@ const FlowSections = () => {
             <div>
               <h3 className="text-2xl font-semibold text-white md:text-3xl">Bereit für atemberaubende Luftaufnahmen?</h3>
               <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
-                Beschreiben Sie kurz Ihr Projekt – wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.
+                Operativer Standort: Gütersloh – bundesweit einsatzbereit. Beschreiben Sie kurz Ihr Projekt, wir melden uns innerhalb von 24 Stunden.
               </p>
             </div>
             <div className="flex gap-3">

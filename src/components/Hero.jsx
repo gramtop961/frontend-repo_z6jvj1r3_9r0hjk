@@ -49,8 +49,8 @@ const Hero = () => {
         <div ref={videoLayerRef} className="h-full w-full">
           <video
             className="h-full w-full object-cover"
-            src="https://cdn.coverr.co/videos/coverr-surfers-in-the-ocean-2903/1080p.mp4"
-            poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1887&auto=format&fit=crop"
+            src="https://cdn.coverr.co/videos/coverr-amazing-aerial-view-of-iceland-8752/1080p.mp4"
+            poster="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1887&auto=format&fit=crop"
             muted
             playsInline
             autoPlay
@@ -75,7 +75,7 @@ const Hero = () => {
           </span>
         </h1>
         <p className="max-w-2xl text-base text-gray-200 md:text-lg">
-          Wir liefern beeindruckende Luftbilder und Videos in Kinoqualität (24–60 FPS) – sicher, gesetzeskonform und deutschlandweit.
+          Wir liefern beeindruckende Luftbilder und Videos in Kinoqualität (24–60 FPS) – sicher, gesetzeskonform und deutschlandweit. Operativer Standort: Gütersloh.
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-3">
           <a
