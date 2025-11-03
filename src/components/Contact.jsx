@@ -19,7 +19,7 @@ export default function Contact() {
               <Phone className="w-5 h-5 text-yellow-400" /> +49 123 456 7890
             </a>
             <p className="inline-flex items-center gap-3 text-white/60">
-              <MapPin className="w-5 h-5 text-yellow-400" /> Operativer Standort: Gütersloh
+              <MapPin className="w-5 h-5 text-yellow-400" /> Operativer Standort: Gütersloh • Region: Bielefeld, Paderborn, Münsterland, NRW
             </p>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function Contact() {
             <li>• Rechtssichere, EU‑versicherte Einsätze</li>
             <li>• 4K/5.1K, 10‑Bit, Log‑Profile</li>
             <li>• FPV & Cinewhoop: 48–120 FPS</li>
-            <li>• Schnelle Verfügbarkeit in NRW</li>
+            <li>• Schnelle Verfügbarkeit in Gütersloh & Umgebung</li>
           </ul>
           <a
             href="mailto:hello@aeroone.de?subject=Projektanfrage%20Aeroone"
