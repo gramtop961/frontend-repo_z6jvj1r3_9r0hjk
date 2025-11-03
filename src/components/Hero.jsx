@@ -1,87 +1,58 @@
-import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { BadgeCheck } from 'lucide-react';
+import { useRef } from 'react';
 
 export default function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
 
   return (
-    <section id="home" ref={ref} className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Background video / photo */}
-      <div className="absolute inset-0">
-        <video
-          className="w-full h-full object-cover opacity-30"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000&auto=format&fit=crop"
-        >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-drone-sunrise-1440/1080p.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+    <section id="home" ref={ref} className="relative min-h-[92vh] overflow-hidden bg-black">
+      {/* Background gradient */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,200,0,0.15),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(255,120,0,0.12),transparent_60%)]" />
 
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black pointer-events-none" />
-      <div className="absolute -top-40 -right-32 h-96 w-96 rounded-full bg-yellow-400/20 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl pointer-events-none" />
+      <motion.div style={{ y, opacity }} className="relative z-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40 pb-24">
+          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-yellow-200">
+            <BadgeCheck className="h-4 w-4" />
+            <span className="text-sm">Premium Luftaufnahmen – Gütersloh & NRW</span>
+          </div>
 
-      <motion.div style={{ y, opacity }} className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <motion.span
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.1, duration: 0.6, ease: 'easeOut' }}
-          className="inline-block px-3 py-1 rounded-full text-xs font-medium tracking-wide bg-white/10 text-yellow-300 border border-yellow-300/30 backdrop-blur"
-        >
-          EU‑versicherte Drohnenproduktion • 4K/5.1K • 24–120 FPS
-        </motion.span>
-        <motion.h1
-          initial={{ y: 24, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
-          className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight"
-        >
-          Aerial Cinematics aus Gütersloh
-        </motion.h1>
-        <motion.p
-          initial={{ y: 24, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.7, ease: 'easeOut' }}
-          className="mt-4 text-white/85 max-w-3xl mx-auto"
-        >
-          Präzise, stabile Luftaufnahmen mit eindrucksvollem Dynamikumfang – rechtssicher, effizient
-          und schnell einsatzbereit in Gütersloh, der Region und ganz NRW.
-        </motion.p>
-        <motion.div
-          initial={{ y: 24, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
-          className="mt-8 flex items-center justify-center gap-4"
-        >
-          <a
-            href="#kontakt"
-            className="px-5 py-3 rounded-md bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold shadow-[0_0_40px_-10px_rgba(251,191,36,0.5)] hover:shadow-[0_0_50px_-8px_rgba(249,115,22,0.6)] transition-shadow"
-          >
-            Projekt anfragen
-          </a>
-          <a href="#gofilm-20" className="px-5 py-3 rounded-md border border-white/20 text-white/90 hover:text-white">
-            Technik ansehen
-          </a>
-        </motion.div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.65, duration: 0.7 }}
-          className="mt-6 text-xs text-white/70"
-        >
-          Operativer Standort: Gütersloh • Einsätze im Umkreis und NRW
-        </motion.p>
+          <h1 className="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
+            Kino‑Qualität aus der Luft.
+            <span className="block bg-gradient-to-r from-yellow-300 via-amber-300 to-orange-400 bg-clip-text text-transparent">
+              Aeroone Luftbildproduktion
+            </span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg text-zinc-300">
+            Wir kombinieren FPV‑Dynamik mit stabilisierten Drohnen für Werbefilm, Immobilien, Events und TV.
+            Scharf, ruhig, detailreich – bereit für Ihren Auftritt.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#galerie"
+              className="rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-3 font-semibold text-black shadow ring-1 ring-yellow-300/40 hover:brightness-110"
+            >
+              Galerie ansehen
+            </a>
+            <a
+              href="#kontakt"
+              className="rounded-xl border border-zinc-700/70 px-5 py-3 font-semibold text-zinc-200 hover:bg-zinc-900/80"
+            >
+              Unverbindlich anfragen
+            </a>
+          </div>
+
+          <p className="mt-8 text-sm text-zinc-400">Gütersloh • Region • NRW</p>
+        </div>
       </motion.div>
+
+      {/* Subtle bottom fade */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
     </section>
   );
 }

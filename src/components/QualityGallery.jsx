@@ -1,85 +1,88 @@
-import React from 'react';
-import { Camera } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
 
-const IMAGES = [
+const photos = [
   {
     src:
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1887&auto=format&fit=crop',
-    alt: 'Küstenklippen bei goldenem Licht',
+      'https://images.unsplash.com/photo-1502772066658-3009bb9cc676?q=80&w=1600&auto=format&fit=crop',
+    title: 'Stadt bei Nacht',
+    subtitle: 'Rauschfreie Detailtiefe, perfekte Linien',
   },
   {
     src:
-      'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1887&auto=format&fit=crop',
-    alt: 'Wald und Nebel von oben',
+      'https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?q=80&w=1600&auto=format&fit=crop',
+    title: 'Küstenlinie',
+    subtitle: 'Cinematic Dynamic Range, natürliche Farben',
   },
   {
     src:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1887&auto=format&fit=crop',
-    alt: 'Berglandschaft mit tiefem Tal',
+      'https://images.unsplash.com/photo-1465414829459-d228b58caf6e?q=80&w=1600&auto=format&fit=crop',
+    title: 'Berge & Nebel',
+    subtitle: 'Knackige Schärfe, sanfte Übergänge',
   },
   {
     src:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1887&auto=format&fit=crop',
-    alt: 'Stadt bei Nacht mit Lichtern',
+      'https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf?q=80&w=1600&auto=format&fit=crop',
+    title: 'Architektur',
+    subtitle: 'Saubere Geometrie, präzise Komposition',
   },
   {
     src:
-      'https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1887&auto=format&fit=crop',
-    alt: 'Serpentinenstraße im Hochland',
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop',
+    title: 'Wald & Wege',
+    subtitle: 'Texturen mit Tiefe, kontrolliertes Licht',
   },
   {
     src:
-      'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1887&auto=format&fit=crop',
-    alt: 'Dramatische Brandung aus der Luft',
+      'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop',
+    title: 'See bei Sonnenaufgang',
+    subtitle: 'Weiche Gradients, hohe Farbtiefe',
   },
 ];
 
-const QualityGallery = () => {
+export default function QualityGallery() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20" aria-labelledby="quality-heading">
-      <div className="mb-8 flex items-end justify-between">
-        <div>
-          <h2 id="quality-heading" className="text-2xl font-semibold text-white md:text-3xl">
-            Bildqualität
-            <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              gestochen scharf
-            </span>
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
-            Kristallklare Details, saubere Kanten und präzise Farben – ideal für Kampagnen, Immobilien und Social.
-          </p>
+    <section id="galerie" className="relative bg-black py-20">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(255,200,0,0.08),transparent_60%)]" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400/15 ring-1 ring-yellow-300/30">
+            <Star className="h-5 w-5 text-yellow-400" />
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">Bildqualität, die überzeugt</h2>
+            <p className="text-zinc-400">Beispiele für unser klares, filmisches Luftbild – scharf, stabil, farbecht.</p>
+          </div>
         </div>
-        <div className="hidden items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-300 md:flex">
-          <Camera className="h-4 w-4" /> 4K/5.1K
-        </div>
-      </div>
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-        {IMAGES.map((img, i) => (
-          <figure
-            key={i}
-            className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 bg-neutral-900"
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              loading="lazy"
-              className="h-full w-full scale-105 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            />
-            <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between p-3 text-xs">
-              <span className="rounded-full bg-black/50 px-2 py-0.5 text-[10px] font-semibold text-white ring-1 ring-white/20">
-                Aeroone
-              </span>
-              <span className="rounded-full bg-yellow-400/20 px-2 py-0.5 font-semibold text-yellow-300 ring-1 ring-yellow-400/30">
-                4K
-              </span>
-            </figcaption>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          </figure>
-        ))}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {photos.map((p, i) => (
+            <motion.figure
+              key={p.src}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="group relative overflow-hidden rounded-2xl border border-zinc-800/60 bg-zinc-900/40"
+            >
+              <img
+                src={p.src}
+                alt={`${p.title} – ${p.subtitle}`}
+                className="h-64 w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                <figcaption className="text-white font-medium">{p.title}</figcaption>
+                <p className="text-sm text-zinc-300">{p.subtitle}</p>
+              </div>
+            </motion.figure>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-4 text-yellow-100">
+          4K/6K Mastering • 10‑Bit Log • ND‑gestütztes Motion‑Blur • präzise Farbkorrektur • ruckelfreie Tracking‑Shots
+        </div>
       </div>
     </section>
   );
-};
-
-export default QualityGallery;
+}
