@@ -192,6 +192,59 @@ const FlowSections = () => {
         </div>
       </section>
 
+      {/* Dedicated sections for Mavic 3 and GoFilm 20 */}
+      <section id="mavic-3" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-white md:text-3xl">
+            DJI Mavic 3
+            <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Premium Allrounder</span>
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
+            Leise, stabil und mit exzellenter Bildqualität – ideal für Werbung, Immobilien und saubere Establishing Shots.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <InfoChip icon={Camera} title="Kamerasystem" text="5.1K/4K, D‑Log, variable Blende – detailreich mit großem Dynamikumfang." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Gauge} title="Flugzeit & Stabilität" text="Lange Flugzeiten, zuverlässiges GPS/RTK, präzises Positioning auch bei Wind." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Film} title="Einsatz" text="Werbefilme, Architektur, Landschaft, ruhige und saubere Kamerafahrten." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={ShieldCheck} title="Compliance" text="EU‑konform, Geo‑Awareness, sichere Missionsplanung, Standort Gütersloh." />
+          </div>
+        </div>
+      </section>
+
+      <section id="gofilm-20" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-white md:text-3xl">
+            GoFilm 20
+            <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Cinewhoop Indoor</span>
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-gray-400 md:text-base">
+            Kompakter Cinewhoop für enge Innenräume – sichere Close‑Ups, dynamische FPV‑Moves und sanfte Durchflüge.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <InfoChip icon={Rocket} title="Einsatzgebiet" text="Innenräume, Store‑Touren, Showrooms, Hospitality, Produkt‑Reveal." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Camera} title="Kamera" text="Actioncam 4K/5.3K – flache Profile, 10‑bit, sichere Mounts, ND‑Workflow." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={Film} title="Moves" text="Smooth Orbits, Reveal‑Flüge, Low‑Altitude Lines – ideal für Social Content." />
+          </div>
+          <div className="md:col-span-6">
+            <InfoChip icon={ShieldCheck} title="Sicherheit" text="Ducted Props, geringes Gewicht, Indoor‑Checklisten, Spotter nach Bedarf." />
+          </div>
+        </div>
+      </section>
+
       {/* Compact gear overview (kept concise) */}
       <section id="gear" className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-8">
@@ -207,20 +260,6 @@ const FlowSections = () => {
         </div>
 
         <div className="grid gap-4 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <InfoChip
-              icon={Camera}
-              title="Mavic 3"
-              text="Leise, stabil, detailreich – ideal für Werbung & Immobilien."
-            />
-          </div>
-          <div className="md:col-span-7">
-            <InfoChip
-              icon={Film}
-              title="GoFilm 20"
-              text="Cinewhoop für enge Innenräume – sichere Close‑Ups und smoothe Shots."
-            />
-          </div>
           <div className="md:col-span-4">
             <InfoChip
               icon={Gauge}

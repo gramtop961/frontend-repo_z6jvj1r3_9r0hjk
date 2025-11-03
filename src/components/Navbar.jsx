@@ -13,6 +13,10 @@ const Navbar = () => {
           </a>
           <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             <a href="#showcase" className="transition hover:text-white">Showcase</a>
+            <a href="#nazgul-f4" className="transition hover:text-white">Nazgul F4</a>
+            <a href="#nazgul-f6" className="transition hover:text-white">Nazgul F6</a>
+            <a href="#mavic-3" className="transition hover:text-white">Mavic 3</a>
+            <a href="#gofilm-20" className="transition hover:text-white">GoFilm 20</a>
             <a href="#gear" className="transition hover:text-white">Ausrüstung</a>
             <a href="#reviews" className="transition hover:text-white">Bewertungen</a>
             <a href="#kontakt" className="transition hover:text-white">Kontakt</a>
