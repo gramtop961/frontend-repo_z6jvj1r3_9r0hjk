@@ -1,36 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Menu, X, Camera, Mail } from 'lucide-react';
 
-const Navbar = () => {
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: '#home', label: 'Start' },
+    { href: '#nazgul-f4', label: 'Nazgul F4' },
+    { href: '#nazgul-f6', label: 'Nazgul F6' },
+    { href: '#mavic-3', label: 'Mavic 3' },
+    { href: '#gofilm-20', label: 'GoFilm 20' },
+    { href: '#kontakt', label: 'Kontakt' },
+  ];
+
   return (
-    <div className="fixed inset-x-0 top-0 z-50">
-      <nav className="mx-auto mt-4 w-[94%] max-w-7xl rounded-2xl border border-white/10 bg-black/60 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-black/40 md:px-6">
-        <div className="flex items-center justify-between">
-          <a href="#home" className="group inline-flex items-center gap-2">
-            <span className="text-lg font-extrabold tracking-tight text-white md:text-xl">
-              Aeroone
-            </span>
-            <span className="hidden h-2 w-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 md:block" />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur border-b border-white/10">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#home" className="flex items-center gap-2 text-white">
+          <Camera className="w-6 h-6 text-yellow-400" />
+          <span className="font-semibold tracking-wide">Aeroone</span>
+        </a>
+
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="text-white/80 hover:text-white transition-colors">
+              {l.label}
+            </a>
+          ))}
+          <a
+            href="mailto:hello@aeroone.de"
+            className="ml-2 inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-medium"
+          >
+            <Mail className="w-4 h-4" /> Angebot anfragen
           </a>
-          <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
-            <a href="#showcase" className="transition hover:text-white">Showcase</a>
-            <a href="#nazgul-f4" className="transition hover:text-white">Nazgul F4</a>
-            <a href="#nazgul-f6" className="transition hover:text-white">Nazgul F6</a>
-            <a href="#mavic-3" className="transition hover:text-white">Mavic 3</a>
-            <a href="#gofilm-20" className="transition hover:text-white">GoFilm 20</a>
-            <a href="#gear" className="transition hover:text-white">Ausrüstung</a>
-            <a href="#reviews" className="transition hover:text-white">Bewertungen</a>
-            <a href="#kontakt" className="transition hover:text-white">Kontakt</a>
+        </nav>
+
+        <button
+          className="md:hidden text-white"
+          aria-label="Menü öffnen"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {open && (
+        <div className="md:hidden border-t border-white/10 bg-black/90">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-white/90 hover:text-white"
+              >
+                {l.label}
+              </a>
+            ))}
             <a
-              href="mailto:hello@aeroone.de?subject=Service%20anfragen%20-%20Aeroone&body=Hallo%20Aeroone%2C%0A%0Ich%20m%C3%B6chte%20folgende%20Drohnen-Dienstleistung%20anfragen%3A%0A%0AProjekt%3A%20%0AOrt%3A%20%0ATermin%3A%20%0ABudget%3A%20%0A%0AVielen%20Dank!"
-              className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-2 font-semibold text-black shadow-lg shadow-orange-500/20 transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-orange-500/40"
+              href="mailto:hello@aeroone.de"
+              className="mt-2 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-medium"
             >
-              Service anfragen
+              <Mail className="w-4 h-4" /> Angebot anfragen
             </a>
           </div>
         </div>
-      </nav>
-    </div>
+      )}
+    </header>
   );
-};
-
-export default Navbar;
+}

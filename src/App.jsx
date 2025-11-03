@@ -1,18 +1,20 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import QualityGallery from './components/QualityGallery';
 import FlowSections from './components/FlowSections';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white antialiased">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <Hero />
-      <QualityGallery />
-      <FlowSections />
-      <footer className="border-t border-white/10 py-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Aeroone – Professionelle Drohnenaufnahmen in Deutschland
+      <main className="pt-16">
+        <Hero />
+        <FlowSections />
+        <Contact />
+      </main>
+      <footer className="border-t border-white/10 py-8 text-center text-white/50 text-xs">
+        © {new Date().getFullYear()} Aeroone – Luftaufnahmen aus Gütersloh
       </footer>
     </div>
   );
