@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import VideoShowcase from './components/VideoShowcase';
 import Reviews from './components/Reviews';
@@ -7,6 +8,7 @@ import Contact from './components/Contact';
 function App() {
   return (
     <div className="min-h-screen bg-black text-white antialiased">
+      <Navbar />
       <Hero />
       <VideoShowcase />
       <Reviews />

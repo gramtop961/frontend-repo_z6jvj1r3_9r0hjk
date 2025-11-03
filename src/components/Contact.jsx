@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-20">
+    <section id="kontakt" className="relative mx-auto max-w-7xl px-6 py-20">
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-900 to-neutral-950 p-8 md:p-12">
         <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div>

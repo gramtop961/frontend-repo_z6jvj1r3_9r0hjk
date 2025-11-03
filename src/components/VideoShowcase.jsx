@@ -38,7 +38,7 @@ const VideoCard = ({ src, title }) => (
 
 const VideoShowcase = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-20">
+    <section id="showcase" className="relative mx-auto max-w-7xl px-6 py-20">
       <div className="mb-8 flex items-end justify-between">
         <div>
           <h2 className="text-2xl font-semibold text-white md:text-3xl">

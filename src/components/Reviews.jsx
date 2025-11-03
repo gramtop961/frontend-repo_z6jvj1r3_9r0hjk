@@ -35,7 +35,7 @@ const Stars = ({ count }) => (
 
 const Reviews = () => {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16">
+    <section id="reviews" className="mx-auto max-w-7xl px-6 py-16">
       <div className="mb-8">
         <h2 className="text-2xl font-semibold text-white md:text-3xl">
           Kundenstimmen

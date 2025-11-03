@@ -4,14 +4,14 @@ import { Rocket } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden bg-black text-white">
+    <section id="home" className="relative min-h-[90vh] w-full overflow-hidden bg-black text-white">
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/a6HhFsV3-DN9Z-yP/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90" />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 pt-28 md:pt-36">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 pt-32 md:pt-36">
         <span className="inline-flex items-center gap-2 rounded-full bg-yellow-500/10 px-4 py-1 text-sm font-medium text-yellow-400 ring-1 ring-yellow-500/30">
           <Rocket className="h-4 w-4" />
           Aeroone – Luftaufnahmen in 4K/5.1K
